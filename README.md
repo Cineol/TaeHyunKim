@@ -1,2 +1,4 @@
 # TaeHyunKim
-ㄸxplorer
+C++, Python
+Algorithm,
+DeepLearning
