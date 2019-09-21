@@ -1,4 +1,4 @@
 # TaeHyunKim
-C++, Python
+C++, Python,
 Algorithm,
 DeepLearning
