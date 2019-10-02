@@ -4,17 +4,17 @@
 void Algorithms::Practice_1_2_2()
 {
 	uint32_t i = 2;
-	uint32_t insertionSort = 0; //»ðÀÔ Á¤·Ä
-	uint32_t mergeSort = 0; // º´ÇÕ Á¤·Ä
+	uint32_t insertionSort = 0; //ì‚½ìž… ì •ë ¬
+	uint32_t mergeSort = 0; // ë³‘í•© ì •ë ¬
 	while (true) {
 		insertionSort = 8 * i * i;
-		mergeSort = ceil(64 * i * log2(i)); // È½¼öÀÌ±â ¶§¹®¿¡ ¹«Á¶°Ç ÀÚ¿¬¼öÀÌ´Ù.(¿Ã¸²)		
+		mergeSort = ceil(64 * i * log2(i)); // íšŸìˆ˜ì´ê¸° ë•Œë¬¸ì— ë¬´ì¡°ê±´ ìžì—°ìˆ˜ì´ë‹¤.(ì˜¬ë¦¼)		
 		if (insertionSort > mergeSort) {
-			cout << "µ¥ÀÌÅÍÀÇ °¹¼ö°¡ " << i << "°³ ÀÌ»óÀÏ¶§ »ðÀÔ Á¤·ÄÀÌ º´ÇÕ Á¤·Äº¸´Ù." << endl;
+			cout << "ë°ì´í„°ì˜ ê°¯ìˆ˜ê°€ " << i << "ê°œ ì´ìƒì¼ë•Œ ì‚½ìž… ì •ë ¬ì´ ë³‘í•© ì •ë ¬ë³´ë‹¤." << endl;
 			break;
 		}		
-		if (i == UINT32_MAX) { // ¸¸¾à uint32_tÀÇ ¹üÀ§¸¦ ¹þ¾î³¯¶§±îÁö Ã£Áö ¸øÇß´Ù¸é 
-			cout << "µ¥ÀÌÅÍÀÇ °¹¼ö°¡ 2~2^32 »çÀÌ¿¡¼­ Ç×»ó »ðÀÔ Á¤·ÄÀÌ ºü¸£´Ù. "<< endl;
+		if (i == UINT32_MAX) { // ë§Œì•½ uint32_tì˜ ë²”ìœ„ë¥¼ ë²—ì–´ë‚ ë•Œê¹Œì§€ ì°¾ì§€ ëª»í–ˆë‹¤ë©´ 
+			cout << "ë°ì´í„°ì˜ ê°¯ìˆ˜ê°€ 2~2^32 ì‚¬ì´ì—ì„œ í•­ìƒ ì‚½ìž… ì •ë ¬ì´ ë¹ ë¥´ë‹¤. "<< endl;
 			break; 
 		}
 		i++;
@@ -30,11 +30,11 @@ void Algorithms::Practice_1_2_3()
 		algorithm1 = 100 * i * i;
 		algorithm2 = pow(2, i);
 		if (algorithm2 > algorithm1) {
-			cout << "µ¥ÀÌÅÍÀÇ °¹¼ö°¡ " << i << "°³ ÀÌ»óÀÏ¶§ ¾Ë°í¸®Áò1ÀÌ ¾Ë°í¸®Áò2º¸´Ù ºü¸£´Ù." << endl;
+			cout << "ë°ì´í„°ì˜ ê°¯ìˆ˜ê°€ " << i << "ê°œ ì´ìƒì¼ë•Œ ì•Œê³ ë¦¬ì¦˜1ì´ ì•Œê³ ë¦¬ì¦˜2ë³´ë‹¤ ë¹ ë¥´ë‹¤." << endl;
 			break;
 		}
-		if (i == UINT64_MAX) {// ¸¸¾à int64_tÀÇ ¹üÀ§¸¦ ¹þ¾î³¯¶§±îÁö Ã£Áö ¸øÇß´Ù¸é 
-			cout << "µ¥ÀÌÅÍÀÇ °¹¼ö°¡ 2~2^64 »çÀÌ¿¡¼­ Ç×»ó ¾Ë°í¸®Áò2°¡ ¾Ë°í¸®Áò1º¸´Ù ºü¸£´Ù. " << endl;
+		if (i == UINT64_MAX) {// ë§Œì•½ int64_tì˜ ë²”ìœ„ë¥¼ ë²—ì–´ë‚ ë•Œê¹Œì§€ ì°¾ì§€ ëª»í–ˆë‹¤ë©´ 
+			cout << "ë°ì´í„°ì˜ ê°¯ìˆ˜ê°€ 2~2^64 ì‚¬ì´ì—ì„œ í•­ìƒ ì•Œê³ ë¦¬ì¦˜2ê°€ ì•Œê³ ë¦¬ì¦˜1ë³´ë‹¤ ë¹ ë¥´ë‹¤. " << endl;
 			break;
 		}
 		i++;
@@ -51,62 +51,70 @@ inline uint64_t factorial(uint64_t n) {
 }
 void Algorithms::Problems_1_1()
 {
-	auto a = factorial(10);
-	auto a1 = factorial(20);
-	auto a2 = factorial(30);
-	auto a3 = factorial(40);
-	auto a4 = factorial(50);
-	double micro = 1e-6;//0.000001
-	double second = (double)1/60;
-	double minute = second * 60;
-	double hour = minute * 60;
-	double day = hour * 24;
-	double month = day * 30;
-	double year = day * 365;
-	double century = year * 100;
-	vector<double> time = { second, minute, hour, day, month, year, century };
-	uint64_t func_log2_N = 1;
-	uint64_t func_sqrt_N = 1;
-	uint64_t func_N = 1;
-	uint64_t func_N_log2_N = 1;
-	uint64_t func_NxN = 1;
-	uint64_t func_NxNxN= 1;
-	uint64_t func_pow2_N = 1;
-	uint64_t func_N_pactorial = 1;
-	vector<uint64_t> function = { func_log2_N, func_sqrt_N, func_N, func_N_log2_N, func_NxN, func_NxNxN, func_pow2_N, func_N_pactorial };
-	vector<string> strFunction = { "log2(n)","sqrt(n)","n","nlog2(n)","n^2","n^3","2^n","n!" };
-	int i = 0;
-	for (auto f : function){
-		cout << strFunction[i].c_str();
+	uint64_t micro = 1e-6;
+	uint64_t second = 1e+6;
+	uint64_t minute = second * 60;
+	uint64_t hour = minute * 60;
+	uint64_t day = hour * 24;
+	uint64_t month = day * 30;
+	uint64_t year = day * 365;
+	uint64_t century = 31556736 * 1e+8;
+	vector<uint64_t> time = { second, minute, hour, day, month, year, century };
+	vector<string> vecStrFunction = { "log2(n)","sqrt(n)","n","nlog2(n)","n^2","n^3","2^n","n!" };
+	vector<string> vecStrUnit = { "second :", "minute :", " hour  :", "  day  :", " month :", "  year :", "century:" };
+
+	for (int i = 0; i < vecStrFunction.size(); i++) {
+		int strIdx = 0;
+		cout << vecStrFunction[i].c_str() << endl;
 		for (auto t : time) {
+			cout << vecStrUnit[strIdx];
 			switch (i) {
 			case 0:
-				cout << log2(f * t) << "\t\t";
+				cout << 2 << "^(" << pow(10, log10(t)) << ")";
 				break;
 			case 1:
-				cout << sqrt(f * t) << "\t\t";
+				cout << pow(t, 2);
 				break;
 			case 2:
-				cout << f * t << "\t\t";
+				cout << double(t);
 				break;
+
+			//ìž‘ë™ì€ í•˜ì§€ë§Œ 1ì¼ ì´ìƒë¶€í„° ê³„ì‚°ì— ì‹œê°„ì´ ë„ˆë¬´ ì˜¤ëž˜ê±¸ë¦¼.
+			//ëžŒë² ë¥´íŠ¸ wí•¨ìˆ˜ë¥¼ ì´ìš©í•˜ì—¬ êµ¬í•˜ëŠ” ë°©ë²•ìœ¼ë¡œ ìˆ˜ì •í•´ì•¼ë¨.
 			case 3:
-				cout << f * t * log2(f * t) << "\t\t";
+			{
+				//int n = 1;
+				//while (true) {
+				//	if (t < n*log2(n)) break;
+				//	else n++;
+				//}
+				//cout << n-1;
 				break;
+			}
+
 			case 4:
-				cout << pow(f * t, 2) << "\t\t";
+				cout << sqrt(t);
 				break;
 			case 5:
-				cout << pow(f * t, 3) << "\t\t";
+				cout << cbrt(t);
 				break;
 			case 6:
-				cout << pow(2, f * t) << "\t\t";
+				cout << log2(t);
 				break;
 			case 7:
-				cout << factorial((int)f * t) << "\t\t";
+			{
+				int n = 1;
+				while (true) {
+					if (t < factorial(n)) break;
+					else n++;
+				}
+				cout << n-1;
 				break;
-			}			
+			}
+			}
+			strIdx++;
+			cout << endl;
 		}
 		cout << endl;
-		i++;
 	}
 }
